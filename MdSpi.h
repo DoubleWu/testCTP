@@ -1,9 +1,10 @@
+#pragma once
 #include "./lib/ThostFtdcMdApi.h"
 
 class CMdSpi : public CThostFtdcMdSpi
 {
 public:
-//    CMdSpi(CThostFtdcMdApi *pUserApi) { this->pUserApi = pUserApi;}
+    CMdSpi(CThostFtdcMdApi *pUserApi) { this->pUserApi = pUserApi;}
 	///当客户端与交易后台建立起通信连接时（还未登录前），该方法被调用。
 	virtual void OnFrontConnected();
 	
@@ -43,7 +44,7 @@ public:
     virtual void OnRspSubForQuoteRsp(CThostFtdcSpecificInstrumentField *pSpecificInstrument, CThostFtdcRspInfoField*pRspInfo, int nRequestID, bool bIsLast);
 
 private:
-//    CThostFtdcMdApi *pUserApi;
+    CThostFtdcMdApi *pUserApi;
     void ReqUserLogin();
     void SubscribeMarketData();
     // 

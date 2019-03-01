@@ -1,11 +1,11 @@
 CXX = g++
 CXXFLAGS = -O2 -g -Wall
-OBJS = MdSpi.o \
-       testMdApi.o
+OBJS = TraderSpi.o \
+       testTraderApi.o
 
 INCLUDES = -I.
-LIB += -lthostmduserapi
-TARGET = testCTP.exe
+LIB += -lthosttraderapi
+TARGET = testTrader.exe
 
 $(TARGET) : $(OBJS)
 	$(CXX) -o $(TARGET) $(OBJS) $(LIB)

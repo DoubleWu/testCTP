@@ -5,7 +5,7 @@
 
 using namespace std;
 
-extern CThostFtdcMdApi* pUserApi;
+//extern CThostFtdcMdApi* pUserApi;
 extern char FRONT_ADDR[];       
 extern TThostFtdcBrokerIDType   BROKER_ID;
 extern TThostFtdcInvestorIDType INVESTOR_ID;
@@ -90,6 +90,10 @@ void CMdSpi::OnRspSubForQuoteRsp(CThostFtdcSpecificInstrumentField *pSpecificIns
 void CMdSpi::OnRtnDepthMarketData(CThostFtdcDepthMarketDataField *pDepthMarketData)
 {
     cerr << __FUNCTION__ << endl;    
+    cout << "PreOpenInterest" << pDepthMarketData->PreOpenInterest << endl;
+    cout << "LastPrice" << pDepthMarketData->LastPrice << endl;
+    cout << "BidPrice1" << pDepthMarketData->BidPrice1 << endl;
+    cout << "AskPrice1" << pDepthMarketData->AskPrice1 << endl;
 }
 
 void CMdSpi::OnRtnForQuoteRsp(CThostFtdcForQuoteRspField *pForQuoteRsp)
